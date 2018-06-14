@@ -4,7 +4,7 @@
 Designed to run from a scheduled Azure runbook, this module will stop and start VMs according to the value of a given tag.  The tag will contain the times and days a VM should be stopped.  If the runbook is executing during one of these periods, the VM will be stopped.
 
 ### Tag Format
-The tag must be in the format `hh:mm-hh:mm|ddd[/ddd][,...n]`.  So, a tag may look like any of the these:
+The tag must be in the format `HH:mm-hh:mm|ddd[/ddd][,...n]`.  So, a tag may look like any of the these:
 
 | Description                                                                                            | Tag Value                                              |
 |--------------------------------------------------------------------------------------------------------|--------------------------------------------------------|

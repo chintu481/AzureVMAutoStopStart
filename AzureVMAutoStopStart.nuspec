@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+<metadata>
+<id>SQLDWSchemaMigrate</id>
+<version>0.0.0.1</version>
+<authors>Richie Lee</authors>
+<description>Stops / starts Azure VMs based on supplied tag and subscription name </description>
+<releaseNotes>
+PowerShell Module that will be used to stop/start Azure virtual machines in a subscription based on a specific tag. 
+
+Please note that this is still in development stages!
+</releaseNotes>
+<projectUrl>https://github.com/sabinio/AzureVMAutoStopStart</projectUrl>
+<iconUrl>https://raw.githubusercontent.com/sabinio/AzureVMAutoStopStart/master/AzureVMAutoStopStart/image/icon.png</iconUrl>
+</metadata>
+<files>
+<file src="AzureVMAutoStopStart.psd1"/>
+<file src="AzureVMAutoStopStart.psm1"/>
+<file src="..\readme.md"/>
+<file src="Public\*.ps1" target="Public"/>
+<file src="Private\*.ps1" target="Private"/>
+<file src="Images\icon.png"/>
+</files>
+</package>
