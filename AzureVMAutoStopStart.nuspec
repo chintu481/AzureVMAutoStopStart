@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?> 
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 <metadata>
-<id>SQLDWSchemaMigrate</id>
+<id>AzureVMAutoStopStart</id>
 <version>0.0.0.1</version>
 <authors>Ben Howard</authors>
 <description>Stops / starts Azure VMs based on supplied tag and subscription name </description>
@@ -16,7 +16,7 @@ Please note that this is still in development stages!
 <files>
 <file src="AzureVMAutoStopStart.psd1"/>
 <file src="AzureVMAutoStopStart.psm1"/>
-<file src="..\readme.md"/>
+<file src="readme.md"/>
 <file src="Public\*.ps1" target="Public"/>
 <file src="Private\*.ps1" target="Private"/>
 <file src="Images\icon.png"/>

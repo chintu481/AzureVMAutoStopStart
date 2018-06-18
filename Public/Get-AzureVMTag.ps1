@@ -14,15 +14,17 @@ function Get-AzureVMTag {
 #>  
 [CmdletBinding()]    
     param (
-       [string] $SubscriptionName,
-       [string] $TagName
+        [Parameter(Mandatory=$true)][ValidateNotNullOrEmpty()]    
+        [string] $SubscriptionName,
+        [Parameter(Mandatory=$true)][ValidateNotNullOrEmpty()] 
+        [string] $TagName
     )
 
     $Result = @()
 
     $ErrorActionPreference = 'stop'
 
-    Select-AzureRmSubscription -Subscription $SubscriptionName | Out-Null
+    Select-AzureRmSubscription -SubscriptionName $SubscriptionName | Out-Null
 
     Get-AzureRmVM -PipelineVariable VMs |  ForEach-Object {
         Get-AzureRmVM -ResourceGroupName $VMs.ResourceGroupName -Name $VMs.Name -Status -PipelineVariable VMStatus | ForEach-Object {
