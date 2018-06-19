@@ -1,6 +1,6 @@
 #Requires -Modules Pester
 #$here = Split-Path -Parent $MyInvocation.MyCommand.Path
-$there = (Split-Path -Parent $MyInvocation.MyCommand.Path) -replace '\\Tests\\', '\'
+$there = (Split-Path -Parent $MyInvocation.MyCommand.Path) -replace '\\Tests', '\Functions'
 $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
 $file = Get-ChildItem "$there\$sut"
 . $file
@@ -59,13 +59,13 @@ Describe $file.BaseName -Tags Unit {
             $TestResult.Count | Should Be 2
         }
 
-        It "returns 7 results when a week is configured" {
-            $BaseDate = (Get-Date)
+        It "returns 8 results when a week is configured" {
+            $BaseDate = (Get-Date "2018-06-18 10:00")
             $Tag = '23:00-23:30|Mon/Tue/Wed/Thu/Fri/Sat/Sun'
             
             $TestResult = Get-AzureVMStoppedDateTimesFromTag -BaseDate $BaseDate -Tag $Tag
 
-            $TestResult.Count | Should Be 7
+            $TestResult.Count | Should Be 8
         }
         
         It "returns correct start and stop times" {

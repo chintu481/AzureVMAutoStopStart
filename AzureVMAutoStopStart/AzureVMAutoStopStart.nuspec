@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+<metadata>
+<id>AzureVMAutoStopStart</id>
+<version>0.0.0.1</version>
+<authors>Ben Howard</authors>
+<description>Gets a list of Azure VMs to stop or start based on supplied tag and subscription name</description>
+<releaseNotes>
+Gets a list of Azure VMs to stop or start based on supplied tag and subscription name.  
+
+Please note that this is still in development stages!
+</releaseNotes>
+<projectUrl>https://github.com/sabinio/AzureVMAutoStopStart</projectUrl>
+<iconUrl>https://raw.githubusercontent.com/sabinio/AzureVMAutoStopStart/master/Images/Icon.png</iconUrl>
+</metadata>
+<files>
+
+<file src="AzureVMAutoStopStart.psd1"/>
+<file src="AzureVMAutoStopStart.psm1"/>
+<file src="Functions\*.ps1" target="Functions"/>
+<file src="Images\icon.png"/>
+</files>
+</package>

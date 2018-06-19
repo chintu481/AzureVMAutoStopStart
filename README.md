@@ -1,7 +1,10 @@
 # AzureVMAutoStopStart
 
 ## What is it?
-Designed to run from a scheduled Azure runbook, this module will stop and start VMs according to the value of a given tag.  The tag will contain the times and days a VM should be stopped.  If the runbook is executing during one of these periods, the VM will be stopped.
+A powershell workflow runbook, "Stop-Start-Azure-VMs", and a powershell module, "AzureVMAutoStopStart".  
+
+## How do I use it?
+The runbook should run under a schedule within an Azure Automation Account, and uses the module to determine, based the subscription and tag names supplied, which VMs should be stopped or started.  The tag should contain the times and days a VM should be _stopped_.  If the runbook is executing during one of these periods, the VM will be stopped (if started).  Otherwise the VM will be started (if stopped).
 
 ### Tag Format
 The tag must be in the format `HH:mm-hh:mm|ddd[/ddd][,...n]`.  So, a tag may look like any of the these:

@@ -28,6 +28,8 @@ function Get-AzureVMsStoppedDateTimes {
             )
     
         $Result = @()
+
+        Select-AzureRmSubscription -SubscriptionName $SubscriptionName 	-ErrorAction Stop | Out-Null
     
         Get-AzureVMTag  -SubscriptionName $SubscriptionName -TagName $TagName | 
             Select-Object -PipelineVariable VMStoppedTimeTag | ForEach-Object {
