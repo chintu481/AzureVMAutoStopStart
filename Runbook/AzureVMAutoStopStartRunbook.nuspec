@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?> 
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 <metadata>
-<id>inf-pe-azurevmautostopdstart</id>
+<id>AzureVMAutoStopStartRunbook</id>
 <version>0.0.0.1</version>
 <authors>Ben Howard</authors>
-<description>Powershell runbook and integration module for finding Azure VMs to stop/start based on tag value</description>
+<description>Powershell runbook for finding Azure VMs to stop/start based on tag value</description>
 <releaseNotes>
-Stop or starts Azure VMs based on supplied tag and subscription name.  
+Stop or starts Azure VMs based on supplied tag and subscription name.  Designed to run as a runbook, and requires 
+the AzureVMAutoStopStart integration module.
 
 Please note that this is still in development stages!
 </releaseNotes>
@@ -14,8 +15,7 @@ Please note that this is still in development stages!
 <iconUrl>https://raw.githubusercontent.com/sabinio/AzureVMAutoStopStart/master/Images/Icon.png</iconUrl>
 </metadata>
 <files>
-
-<file src="AzureVMAutoStopStart\AzureVMAutoStopStart.zip"/>
-<file src="Runbook\Stop-Start-Azure-VMs.ps1"/>
+<file src="Stop-Start-Azure-VMs.ps1"/>
 </files>
 </package>
+ 

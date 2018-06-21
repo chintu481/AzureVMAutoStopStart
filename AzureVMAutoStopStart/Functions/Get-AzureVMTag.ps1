@@ -49,3 +49,4 @@ function Get-AzureVMTag {
     } 
     return $Result
 }
+  

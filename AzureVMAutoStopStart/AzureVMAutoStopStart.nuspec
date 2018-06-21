@@ -6,7 +6,8 @@
 <authors>Ben Howard</authors>
 <description>Gets a list of Azure VMs to stop or start based on supplied tag and subscription name</description>
 <releaseNotes>
-Gets a list of Azure VMs to stop or start based on supplied tag and subscription name.  
+Gets a list of Azure VMs to stop or start based on supplied tag and subscription name.  The zip file is used for import as an integration module
+into an Azure Automation Account
 
 Please note that this is still in development stages!
 </releaseNotes>
@@ -15,9 +16,11 @@ Please note that this is still in development stages!
 </metadata>
 <files>
 
+<file src="*.zip"/>
+<file src="Images\icon.png"/>
 <file src="AzureVMAutoStopStart.psd1"/>
 <file src="AzureVMAutoStopStart.psm1"/>
 <file src="Functions\*.ps1" target="Functions"/>
-<file src="Images\icon.png"/>
+
 </files>
 </package>
