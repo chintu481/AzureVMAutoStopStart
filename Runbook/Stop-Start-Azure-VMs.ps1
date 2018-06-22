@@ -6,9 +6,8 @@ workflow Stop-Start-Azure-VMs {
         [string] $TagName
     )
 
-    $verbosepreference = 'silentlycontinue'
 
-    Write-Output "The time is $((Get-Date).ToString("HH:mm:ss"))"
+    $verbosepreference = 'silentlycontinue'
 
     $connectionName = "AzureRunAsConnection"
     try
@@ -38,6 +37,7 @@ workflow Stop-Start-Azure-VMs {
     $VMs = InlineScript {
         Import-Module 'AzureVMAutoStopStart' -Force 
         $verbosepreference = 'continue'
+        Write-Verbose "The comparison time is $((Get-DateInTimeZone).ToString("HH:mm:ss"))"
         Write-Verbose "Finding VMs in subscription '$($USING:SubscriptionName)' with tag '$($USING:TagName)'.."
         Get-AzureVMsStoppedDateTimes -SubscriptionName $USING:SubscriptionName -TagName $USING:TagName
     }

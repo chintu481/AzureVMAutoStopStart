@@ -21,7 +21,7 @@ function Get-AzureVMsStoppedDateTimes {
             [string]  
             $SubscriptionName,
             [datetime] 
-            $Date = (get-date),
+            $Date = (Get-DateInTimeZone),
             [Parameter(Mandatory=$true)][ValidateNotNullOrEmpty()] 
             [string] 
             $TagName

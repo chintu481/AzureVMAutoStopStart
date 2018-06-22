@@ -88,6 +88,16 @@ Describe $file.BaseName -Tags Unit {
             $TestResult[0].StoppedDateTimeEnd | Should Be ([datetime] '2018-06-08 01:30:00')
         }
 
+        It "returns correct end dates when time crosses a day boundary 2" {
+            $BaseDate = (Get-Date "2018-06-22 00:05")
+            $Tag = '17:00-07:30|Mon/Tue/Wed/Thu/Fri'
+            
+            $TestResult = Get-AzureVMStoppedDateTimesFromTag -BaseDate $BaseDate -Tag $Tag
+            $TestResult
+            $TestResult[0].StoppedDateTimeStart | Should Be ([datetime] '2018-06-21 17:00:00')
+            $TestResult[0].StoppedDateTimeEnd | Should Be ([datetime] '2018-06-22 07:30:00')
+        }
+
 
 
     }

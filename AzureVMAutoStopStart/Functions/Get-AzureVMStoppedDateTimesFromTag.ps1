@@ -59,7 +59,7 @@ param (
         }
         
         
-        for ($i=0; $i -le 7; $i++) {
+        for ($i=-1; $i -le 7; $i++) {
 
             $LoopDate = ($BaseDate.Date).AddDays($i)
             $LoopDateDay = (($LoopDate).DayOfWeek).ToString().Substring(0,3)
